@@ -1,7 +1,53 @@
+<!DOCTYPE html>
+<html>
 <head>
-  <title>Ad Cookie Test Page</title>
+  <title>Full Cookie Stress Test</title>
+	<!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/1e79d3c06a83ca31ff8b55ae93ce8222/script.js"></script> <!-- End cookieyes banner -->
+  <!-- Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-123456789"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-123456789');
+  </script>
 
-  <!-- CookieYes Script -->
-    <!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/1e79d3c06a83ca31ff8b55ae93ce8222/script.js"></script> <!-- End cookieyes banner -->
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TEST12345"></script>
+  <script>
+    gtag('config', 'G-TEST12345');
+  </script>
+
+  <!-- Simulated First-Party Cookies -->
+  <script>
+    document.cookie = "ad_test_cookie=active; path=/; max-age=3600";
+    document.cookie = "analytics_test_cookie=tracking; path=/; max-age=3600";
+    document.cookie = "marketing_test_cookie=enabled; path=/; max-age=3600";
+  </script>
+
+  <!-- Storage Tests -->
+  <script>
+    localStorage.setItem("local_marketing", "true");
+    sessionStorage.setItem("session_analytics", "true");
+  </script>
 
 </head>
+<body>
+
+  <h1>Advanced Cookie Testing Page</h1>
+
+  <p>This page loads multiple advertising and analytics technologies.</p>
+
+  <h2>YouTube Embed</h2>
+  <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+    title="YouTube video player"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+
+  <h2>DoubleClick Test Pixel</h2>
+  <img src="https://ad.doubleclick.net/ddm/activity/src=1234567;type=invmedia;cat=example;ord=1?" width="1" height="1" />
+
+</body>
+</html>
